@@ -144,8 +144,10 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    const mailSubject = encodeURIComponent(subject);
+    const mailBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
     formSuccess.hidden = false;
-    contactForm.reset();
+    window.location.href = `mailto:reethuchowdary905@gmail.com?subject=${mailSubject}&body=${mailBody}`;
   }
 
   window.addEventListener("scroll", () => {
